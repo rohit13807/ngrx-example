@@ -1,0 +1,18 @@
+<h1>Product List</h1>
+<ul>
+  @if (products$ | async as products) {
+  @for (product of products; track product) {
+  <li>
+    {{ product.name }} - ${{ product.price }}
+  </li>
+  }
+
+  } else {
+  <li>Loading...</li>
+  }
+
+</ul>
+
+<button (click)="addProduct()">Add Random Product</button>
+<!-- 
+<router-outlet />
